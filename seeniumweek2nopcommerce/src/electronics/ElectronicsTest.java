@@ -21,7 +21,7 @@ public class ElectronicsTest extends BaseTest {
         openbrowser(baseurl);
     }
 
-    String email = "karish8113@gmail.com";
+    String email = "karish8193@gmail.com";
 
     public void login() throws InterruptedException {
         Actions actions = new Actions(driver);
@@ -285,6 +285,11 @@ public class ElectronicsTest extends BaseTest {
         Assert.assertEquals(actualResult17, expectedResult17);
 //        2.43 Click on “Logout” link
         driver.findElement(By.className("ico-logout")).click();
+//        verify url
+        String current=driver.getCurrentUrl();
+        System.out.println(current);
+        String expected=baseurl;
+        Assert.assertEquals(baseurl,current);
     }
 
     @After
